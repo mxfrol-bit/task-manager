@@ -1,17 +1,27 @@
 {
-  "name": "task-manager-bot",
+  "name": "task-manager-web",
   "version": "1.0.0",
-  "description": "Telegram bot for task management",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node index.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "telegraf": "^4.15.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@supabase/supabase-js": "^2.39.0",
-    "node-cron": "^3.0.3"
+    "date-fns": "^3.0.0",
+    "lucide-react": "^0.263.1",
+    "reactflow": "^11.10.0"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.0"
   }
 }
