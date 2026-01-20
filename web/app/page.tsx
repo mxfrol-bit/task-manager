@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Calendar, CheckCircle2, Circle, Clock, Trash2, Edit2, Network } from 'lucide-react'
-import { format } from 'date-fns'
-import { ru } from 'date-fns/locale'
+
+
 import ReactFlow, { Node, Edge, Background, Controls } from 'reactflow'
 import 'reactflow/dist/style.css'
 
@@ -313,7 +313,7 @@ function TaskCard({
       {task.due_date && (
         <div className="text-xs text-gray-400 flex items-center gap-1 mb-2">
           <Calendar size={12} />
-          {format(new Date(task.due_date), 'dd MMM, HH:mm', { locale: ru })}
+          {new Date(task.due_date).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
         </div>
       )}
 
@@ -353,7 +353,7 @@ function EditTaskModal({
   const [title, setTitle] = useState(task.title)
   const [description, setDescription] = useState(task.description || '')
   const [dueDate, setDueDate] = useState(
-    task.due_date ? format(new Date(task.due_date), "yyyy-MM-dd'T'HH:mm") : ''
+    task.due_date ? new Date(task.due_date).toISOString().slice(0, 16) : ''
   )
 
   return (
