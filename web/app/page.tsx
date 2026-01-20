@@ -11,8 +11,8 @@ import {
   Edit2,
   Network,
 } from 'lucide-react'
-import format from 'date-fns/format'
-import ru from 'date-fns/locale/ru'
+import { format } from 'date-fns'
+import { ru } from 'date-fns/locale'
 import ReactFlow, { Node, Edge, Background, Controls } from 'reactflow'
 import 'reactflow/dist/style.css'
 
